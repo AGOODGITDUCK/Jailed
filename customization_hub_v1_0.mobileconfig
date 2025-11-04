@@ -2,66 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <!-- Web Clip Payload -->
-    <key>PayloadContent</key>
-    <array>
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.webClip.managed</string>
-
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-
-        <key>PayloadIdentifier</key>
-        <string>com.example.webclip.customizationhub.v1</string>
-
-        <key>PayloadUUID</key>
-        <string>11111111-1111-1111-1111-111111111111</string>
-
-        <key>PayloadDisplayName</key>
-        <string>Customization Hub Web Clip</string>
-
-        <key>Label</key>
-        <string>Customization Hub</string>
-
-        <key>PayloadDescription</key>
-        <string>Adds a Web Clip to the Home Screen that opens the Customization Hub web app.</string>
-
-        <key>URL</key>
-        <string>https://jailedacsess.onrender.com/</string>
-
-        <key>IsRemovable</key>
-        <true/>
-
-        <key>Precomposed</key>
-        <true/>
-
-        <key>FullScreen</key>
-        <false/>
-      </dict>
-    </array>
-
-    <!-- Profile metadata -->
-    <key>PayloadDisplayName</key>
-    <string>Customization Hub Profile</string>
-
-    <key>PayloadIdentifier</key>
-    <string>com.example.profile.customizationhub.v1</string>
-
-    <key>PayloadDescription</key>
-    <string>Installs a Web Clip for the Customization Hub (Profile version 1.0).</string>
-
-    <key>PayloadType</key>
-    <string>Configuration</string>
-
-    <key>PayloadUUID</key>
-    <string>22222222-2222-2222-2222-222222222222</string>
-
-    <key>PayloadVersion</key>
-    <integer>1</integer>
-
-    <key>Version</key>
-    <string>1.0</string>
-  </dict>
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.example.webclip.terminal.v1</string>
+      <key>PayloadUUID</key>
+      <string>aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa</string>
+      <key>PayloadDisplayName</key>
+      <string>Jailed Terminal</string>
+      <key>Label</key>
+      <string>Jailed Terminal</string>
+      <key>PayloadDescription</key>
+      <string>Web Clip for the Nerfed Terminal interface</string>
+      <key>URL</key>
+      <string>https://jailedacsess.onrender.com/terminal/index.html</string>
+      <key>IsRemovable</key>
+      <true/>
+      <key>Precomposed</key>
+      <true/>
+      <key>FullScreen</key>
+      <false/>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>Jailed Terminal Profile</string>
+  <key>PayloadIdentifier</key>
+  <string>com.example.profile.terminal.v1</string>
+  <key>PayloadDescription</key>
+  <string>Installs a Web Clip for the Nerfed Terminal interface (Profile v1.0)</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>Version</key>
+  <string>1.0</string>
+</dict>
 </plist>
