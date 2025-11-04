@@ -12,10 +12,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       text-align: center;
       margin: 0;
+      padding-top: 60px;
     }
     h1 {
       font-size: 2em;
@@ -24,7 +25,7 @@
     }
     p {
       color: #ccc;
-      margin-bottom: 2em;
+      margin-bottom: 1.5em;
     }
     .button {
       display: inline-block;
@@ -41,22 +42,29 @@
       background: #0094d1;
     }
     .banner {
-      background: #ffcc00;
-      color: #000;
+      background: #333333cc; /* subtle semi-transparent dark */
+      color: #ffcc00;
       font-weight: bold;
-      padding: 10px;
+      padding: 10px 15px;
       width: 100%;
       text-align: center;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
     .container {
-      margin-top: 60px; /* to push content below the banner */
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 20px;
+    }
+    a.info-link {
+      color: #00b4ff;
+      text-decoration: underline;
+      font-size: 0.9em;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -64,15 +72,16 @@
 
   <!-- Reminder banner -->
   <div class="banner">
-    ⚠️ Reminder: You need to install the Jailed Profile to use this app fully.
+    ⚠️ Reminder: Install the Jailed Profile to use the app fully.
   </div>
 
   <div class="container">
     <h1>Jailed Access</h1>
     <p>Welcome! Choose a tool below:</p>
-    <p>How to install profiles https://support.apple.com/en-us/102400</p>
+    <a class="info-link" href="https://support.apple.com/en-us/102400" target="_blank">How to install profiles</a>
     <a class="button" href="/customization_hub_v1_0.mobileconfig">Download Profile</a>
     <a class="button" href="/terminal/index.html">Terminal</a>
+    <a class="button" href="/VPN/index.html">VPN Instructions</a>
   </div>
 
 </body>
