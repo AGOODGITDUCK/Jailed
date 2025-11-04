@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>PayloadContent</key>
-  <array>
-    <dict>
-      <key>PayloadType</key>
-      <string>com.apple.webClip.managed</string>
-      <key>PayloadVersion</key>
-      <integer>1</integer>
-      <key>PayloadIdentifier</key>
-      <string>com.example.webclip.terminal.v1</string>
-      <key>PayloadUUID</key>
-      <string>aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa</string>
-      <key>PayloadDisplayName</key>
-      <string>Jailed Terminal</string>
-      <key>Label</key>
-      <string>Jailed Terminal</string>
-      <key>PayloadDescription</key>
-      <string>Web Clip for the Nerfed Terminal interface</string>
-      <key>URL</key>
-      <string>https://jailedacsess.onrender.com/terminal/index.html</string>
-      <key>IsRemovable</key>
-      <true/>
-      <key>Precomposed</key>
-      <true/>
-      <key>FullScreen</key>
-      <false/>
-    </dict>
-  </array>
-  <key>PayloadDisplayName</key>
-  <string>Jailed Terminal Profile</string>
-  <key>PayloadIdentifier</key>
-  <string>com.example.profile.terminal.v1</string>
-  <key>PayloadDescription</key>
-  <string>Installs a Web Clip for the Nerfed Terminal interface (Profile v1.0)</string>
-  <key>PayloadType</key>
-  <string>Configuration</string>
-  <key>PayloadUUID</key>
-  <string>bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb</string>
-  <key>PayloadVersion</key>
-  <integer>1</integer>
-  <key>Version</key>
-  <string>1.0</string>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>FullScreen</key>
+            <true/>
+            <key>IsRemovable</key>
+            <true/>
+            <key>Label</key>
+            <string>Jailed Terminal</string>
+            <key>PayloadType</key>
+            <string>com.apple.webClip.managed</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.jailed.terminal.webclip</string>
+            <key>PayloadUUID</key>
+            <string>c4f5b2e3-8d1a-4a9f-b6a8-9e3a1f3d2b7c</string>
+            <key>PayloadDisplayName</key>
+            <string>Jailed Terminal</string>
+            <key>URL</key>
+            <string>https://jailedaccess.onrender.com/terminal/index.html</string>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadIdentifier</key>
+    <string>com.jailed.terminal.profile</string>
+    <key>PayloadUUID</key>
+    <string>f2e1a3c4-7b9d-4e5f-a6b7-c8d9e0f1a2b3</string>
+    <key>PayloadDisplayName</key>
+    <string>Jailed Terminal Profile</string>
 </dict>
 </plist>
