@@ -1,578 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <key>PayloadDisplayName</key>
-    <string>Jailed Access</string>
-
-    <key>PayloadDescription</key>
-    <string>Installs several IKEv2 VPN configurations (you must provide credentials or shared secret where required).</string>
-
-    <key>PayloadIdentifier</key>
-    <string>com.jailed.vpn.bundle.v1</string>
-
-    <key>PayloadUUID</key>
-    <string>e8f7b6c2-4a2d-4f11-9a3e-6f9c2d5b0a01</string>
-
-    <key>PayloadVersion</key>
-    <integer>1</integer>
-
+<dict>
     <key>PayloadContent</key>
     <array>
-
-      <!-- VPN: 219.100.37.30 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.2191003730</string>
-        <key>PayloadUUID</key>
-        <string>1a2b3c4d-1111-4a11-8a11-11111111a111</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 219.100.37.30</string>
-
-        <key>UserDefinedName</key>
-        <string>219.100.37.30</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
+        <!-- Web Clip payload -->
         <dict>
-          <key>RemoteAddress</key>
-          <string>219.100.37.30</string>
-
-          <!-- RemoteIdentifier is typically server FQDN; using IP is acceptable -->
-          <key>RemoteIdentifier</key>
-          <string>219.100.37.30</string>
-
-          <!-- LocalIdentifier can be left empty -->
-          <key>LocalIdentifier</key>
-          <string></string>
-
-          <!-- Authentication: SharedSecret or EAP. Left blank so iOS will prompt -->
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-
-          <!-- Optional cryptographic params (sane defaults) -->
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
+            <key>PayloadType</key>
+            <string>com.apple.webClip.managed</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.jailed.webclip</string>
+            <key>PayloadUUID</key>
+            <string>c4f5b2e3-8d1a-4a9f-b6a8-9e3a1f3d2b7c</string>
+            <key>PayloadDisplayName</key>
+            <string>Jailed Access</string>
+            <key>Label</key>
+            <string>Jailed Access</string>
+            <key>URL</key>
+            <string>https://jailedaccess.onrender.com</string>
+            <key>FullScreen</key>
+            <true/>
+            <key>IsRemovable</key>
+            <true/>
+            <key>Icon</key>
+            <data>
+iVBORw0KGgoAAAANSUhEUgAAAM4AAACUCAMAAADs1OZnAAAAY1BMVEX///89PT0bGxsvLy8AAACcnJxaWlqhoaGmpqZycnL5+fkgICBfX19DQ0M4ODgpKSkXFxeRkZF8fHxra2tkZGTu7u65ublISEjn5+fg4OCvr6/Y2NgREREKCgpSUlKCgoLHx8f78IL2AAAD00lEQVR4nO2d626jMBCFjV1uwVwMTqAkgX3/p1yDExfKhEptV+tM5kj9k9FXfHpsd6CVYWyhQzgmuuTZ2LGt3mWiWs6DE1BjcZ2kGc/0EQLTULVZFfQQmBhQ8DJ6B2qHRoUGFDEEntKkLjjXZ6h44z20wzkqO8jSySidO++hHVo7jvfRDrJ0vm+HxTt2um/bqXfs9Dc70BUPTbg/2cTWTvehY6fqUBo76fnYfdbxHIVjbkaVbEqmqNKwKTmXIJiqMedVEHdAMWzCRlTZAIGdVtPPQahtrTv2TWh+Dlz+WRVZs5SWWkrz1UAyn2tT1lBtAif0EWhI/RjUD69o9QictC6yEJWYRCUWoBLZ8VlMoBLLUIm9LXW9Xi9G1zdIl53iDbyA4N53/WWQRUsFIij5pRJDtJEcyqDIqirLJVCcwaoqB6A4iAm88HxbimQuAjGDQDEqi6I0YAFdsQVBdlwqtE1OfT5uZZscHvRA7RDOTU4m3yEwVWoCEwiM03Du2aAr2iaHC3UAilOTU8xNzlLrnm+vBb111LlHLegT3iDQ3ajjyY4VTTYrSsfqSe0gS4ceTDneRzu4JhttBY730Q6lc+c9tLO3doBn1CveQzuUjuM9tENbgeM9tEO/Rh3voR1Kx/E+2kGWDjI7uCYbbQWO99EOpXPnPbRDa8fxHtqhdBzvox1c6XBk6eCy80JbwRM+yaF0HP9kdp4wnReabGTnY1Rkx4K0duxwKJ0V76EdZOkgu9/BZgfXZKOtwPEe2qF0HE92rMiOFa0dK7KzHhVNNgtSOnY4GP+fDVk6uOzQ/Y7jPbRDG7XjPbRD6TjeRzuUzp330A6tHcf7aAdZOsjs4JpstBU43kM7lI7jfbSDKx2abI730M4LpfOMz9konTvvoZ0XWjvPaAdZOsjs4JpstBU43kM7lI7jfbSDK50fTLbds9ytnWrHTrVzkCa/7NipsggCv/zbKNCznZaqmzEqRNH0p62SaExbIXIF1E61HmUhRASCuq4ncITAUY46EMUAgaconcCihmpqBkUUrz5lNSoxhUosRyVsp4X/7wH8rliBSqxEJVahEtuckf7oYPVbET7nfdJPwIfFr4bz6ZPVO0SUHHRuWq9BAa/nUEETCdMQptC7O3QrTbOY5RA4DnIGG6ioB92atioAr9jKqJg6QeiKaTuBPB/X7xBZd1BjP/dsUAfV6WQ6WR0+/NyAqQGbAwTW8dTnw2Bf96b1KiV0RZaG8WBuEBKodkr7qQVtoN71pn/cUUNe6X7HiuysR0U31xakRx92OAjTobXjeA/tvPTa+QurdVSZeIiMZgAAAABJRU5ErkJggg==
+            </data>
         </dict>
-      </dict>
 
-      <!-- VPN: 131.106.19.102 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.13110619102</string>
-        <key>PayloadUUID</key>
-        <string>2b3c4d5e-2222-4b22-9b22-22222222b222</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 131.106.19.102</string>
-
-        <key>UserDefinedName</key>
-        <string>131.106.19.102</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
+        <!-- VPN payload example -->
         <dict>
-          <key>RemoteAddress</key>
-          <string>131.106.19.102</string>
-          <key>RemoteIdentifier</key>
-          <string>131.106.19.102</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.jailed.vpnprofile</string>
+            <key>PayloadUUID</key>
+            <string>f2e1a3c4-7b9d-4e5f-a6b7-c8d9e0f1a2b3</string>
+            <key>PayloadDisplayName</key>
+            <string>Jailed VPN</string>
+            <key>UserDefinedName</key>
+            <string>Tokyo VPN</string>
+            <key>VPNType</key>
+            <string>IPSec</string>
+            <key>RemoteAddress</key>
+            <string>219.100.37.30</string>
+            <key>AuthenticationMethod</key>
+            <string>None</string>
         </dict>
-      </dict>
-
-      <!-- VPN: 219.100.37.60 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.2191003760</string>
-        <key>PayloadUUID</key>
-        <string>3c4d5e6f-3333-4c33-9c33-33333333c333</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 219.100.37.60</string>
-
-        <key>UserDefinedName</key>
-        <string>219.100.37.60</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>219.100.37.60</string>
-          <key>RemoteIdentifier</key>
-          <string>219.100.37.60</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
-
-      <!-- VPN: 211.185.142.92 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.21118514292</string>
-        <key>PayloadUUID</key>
-        <string>4d5e6f70-4444-4d44-9d44-44444444d444</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 211.185.142.92</string>
-
-        <key>UserDefinedName</key>
-        <string>211.185.142.92</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>211.185.142.92</string>
-          <key>RemoteIdentifier</key>
-          <string>211.185.142.92</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
-
-      <!-- VPN: 95.31.42.25 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.95314225</string>
-        <key>PayloadUUID</key>
-        <string>5e6f7081-5555-4e55-9e55-55555555e555</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 95.31.42.25</string>
-
-        <key>UserDefinedName</key>
-        <string>95.31.42.25</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>95.31.42.25</string>
-          <key>RemoteIdentifier</key>
-          <string>95.31.42.25</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
-
-      <!-- VPN: 38.42.34.114 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.384234114</string>
-        <key>PayloadUUID</key>
-        <string>6f708192-6666-4f66-9f66-66666666f666</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 38.42.34.114</string>
-
-        <key>UserDefinedName</key>
-        <string>38.42.34.114</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>38.42.34.114</string>
-          <key>RemoteIdentifier</key>
-          <string>38.42.34.114</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
-
-      <!-- VPN: 94.143.40.237 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.9414340237</string>
-        <key>PayloadUUID</key>
-        <string>708192a3-7777-5077-a077-777777770777</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 94.143.40.237</string>
-
-        <key>UserDefinedName</key>
-        <string>94.143.40.237</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>94.143.40.237</string>
-          <key>RemoteIdentifier</key>
-          <string>94.143.40.237</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
-
-      <!-- VPN: 171.6.176.246 -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.1716176246</string>
-        <key>PayloadUUID</key>
-        <string>8192a3b4-8888-5188-b188-88888888b888</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 171.6.176.246</string>
-
-        <key>UserDefinedName</key>
-        <string>171.6.176.246</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>171.6.176.246</string>
-          <key>RemoteIdentifier</key>
-          <string>171.6.176.246</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
-
-      <!-- VPN: 59.138.16.13 (Japan) -->
-      <dict>
-        <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.jailed.vpn.591381613</string>
-        <key>PayloadUUID</key>
-        <string>92a3b4c5-9999-5299-c199-99999999c999</string>
-        <key>PayloadDisplayName</key>
-        <string>Jailed VPN — 59.138.16.13</string>
-
-        <key>UserDefinedName</key>
-        <string>59.138.16.13</string>
-
-        <key>VPNType</key>
-        <string>IKEv2</string>
-
-        <key>IKEv2</key>
-        <dict>
-          <key>RemoteAddress</key>
-          <string>59.138.16.13</string>
-          <key>RemoteIdentifier</key>
-          <string>59.138.16.13</string>
-          <key>LocalIdentifier</key>
-          <string></string>
-          <key>AuthenticationMethod</key>
-          <string>SharedSecret</string>
-          <key>SharedSecret</key>
-          <string></string>
-          <key>ExtendedAuthEnabled</key>
-          <integer>0</integer>
-          <key>AuthName</key>
-          <string></string>
-          <key>AuthPassword</key>
-          <string></string>
-          <key>IKESecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>ChildSecurityAssociationParameters</key>
-          <dict>
-            <key>EncryptionAlgorithm</key>
-            <string>AES-256-GCM</string>
-            <key>IntegrityAlgorithm</key>
-            <string>SHA2-384</string>
-            <key>DiffieHellmanGroup</key>
-            <integer>19</integer>
-          </dict>
-          <key>OnDemandEnabled</key>
-          <integer>0</integer>
-        </dict>
-      </dict>
 
     </array>
-  </dict>
+
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadIdentifier</key>
+    <string>com.jailed.access.profile</string>
+    <key>PayloadUUID</key>
+    <string>9b8a7c6d-5e4f-4321-9876-abcdef123456</string>
+    <key>PayloadDisplayName</key>
+    <string>Jailed Access Profile</string>
+</dict>
 </plist>
