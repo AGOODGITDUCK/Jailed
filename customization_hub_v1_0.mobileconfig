@@ -64,10 +64,9 @@
         <false/>
 
         <!-- Optional icon data: include base64 PNG here if you want a custom icon.
-             Leaving it empty will let iOS fetch a site icon or show a generic icon. -->
-        <key>Icon</key>
-        <data></data>
+             Leaving it empty will let iOS fetch a site icon or show a generic icon. --
       </dict>
     </array>
   </dict>
 </plist>
+
