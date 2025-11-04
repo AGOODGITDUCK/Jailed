@@ -3,58 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jailed Access | Customization Hub</title>
+  <title>Jailed Access Terminal</title>
+  <link rel="stylesheet" href="xterm.css" />
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
-      color: #fff;
+      margin: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #111;
+      color: #fff;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.3em;
+    header {
+      padding: 1em;
+      background: #222;
+      text-align: center;
+      font-size: 1.5em;
       color: #00b4ff;
     }
-    p {
-      font-size: 1.1em;
-      color: #ccc;
-      max-width: 80%;
-      margin-bottom: 2em;
-    }
-    a.button {
-      background: #00b4ff;
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    a.button:hover {
-      background: #0094d1;
-    }
-    footer {
-      position: absolute;
-      bottom: 12px;
-      font-size: 0.8em;
-      color: #666;
+    #terminal-container {
+      flex: 1;
     }
   </style>
 </head>
 <body>
-  <h1>Jailed Access</h1>
-  <p>Tap below to install the Customization Hub profile on your iPhone or iPad.<br>
-  Compatible with iOS 16.0 – 26.0.</p>
+  <header>Jailed Access Nerfed Terminal</header>
+  <div id="terminal-container"></div>
 
-  <a class="button" href="/customization_hub_v1_0.mobileconfig">Download Profile</a>
+  <script src="xterm.js"></script>
+  <script>
+    const term = new Terminal({cursorBlink:true});
+    term.open(document.getElementById('terminal-container'));
+    term.write('Welcome to Nerfed Terminal\r\n> ');
 
-  <footer>© 2025 Jailed Access</footer>
+    // Simple command parser for nerfed commands
+    const allowedCommands = {
+      help: () => term.writeln('\r\nAvailable commands: help, ls, cat <file>, download <file>'),
+      ls: () => term.writeln('\r\nfile1.txt  file2.txt  file3.txt'),
+      cat: (args) => term.writeln(`\r\nContents of ${args[0]}: Lorem ipsum...`),
+      download: (args) => term.writeln(`\r\nDownload ${args[0]} via your browser link.`)
+    };
+
+    term.onKey(e => {
+      const key = e.domEvent.key;
+      if(key === 'Enter') {
+        const buffer = term.buffer.active.getLine(term.buffer.active.baseY).translateToString(true).trim();
+        const input = buffer.split(' ');
+        const cmd = input[0];
+        const args = input.slice(1);
+        if(allowedCommands[cmd]) allowedCommands[cmd](args);
+        else term.writeln(`\r\nUnknown command: ${cmd}`);
+        term.write('\r\n> ');
+      }
+    });
+  </script>
 </body>
 </html>
