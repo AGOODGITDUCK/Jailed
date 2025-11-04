@@ -1,32 +1,123 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Nerfed Terminal</title>
-  <link rel="stylesheet" href="https://unpkg.com/xterm/css/xterm.css" />
-  <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
-  <style>
-    body { margin: 0; height: 100vh; }
-    #terminal { height: 100%; width: 100%; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jailed Nerfed Terminal</title>
+<link rel="stylesheet" href="xterm.css">
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #111;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  #terminal-container {
+    height: 100%;
+    width: 100%;
+  }
+</style>
 </head>
 <body>
-  <div id="terminal"></div>
-  <script>
-    const term = new Terminal();
-    term.open(document.getElementById('terminal'));
-    term.write('Welcome to Nerfed Terminal\r\n> ');
+<div id="terminal-container"></div>
 
-    term.onKey(e => {
-      if(e.domEvent.key === 'Enter') {
-        // simple command parser example
-        const command = term._core.buffer.active.getLine(term._core.buffer.active.baseY).translateToString(true).trim();
-        if(command === 'help') term.writeln('\r\nAvailable commands: help, ls, cat <file>');
-        else if(command === 'ls') term.writeln('\r\nfile1.txt  file2.txt');
-        else term.writeln(`\r\nUnknown command: ${command}`);
-        term.write('\r\n> ');
-      }
-    });
-  </script>
+<script src="xterm.js"></script>
+<script>
+// Initialize terminal
+const term = new Terminal({ cursorBlink: true });
+term.open(document.getElementById('terminal-container'));
+term.write('Welcome to Nerfed Terminal\r\n> ');
+
+// Persistent storage for files
+let storedFiles = [];
+
+// Save files in localStorage
+function saveFiles(files) {
+  storedFiles = files;
+  localStorage.setItem('terminalFiles', JSON.stringify(files.map(f => ({name:f.name}))));
+}
+
+// Load previously stored files
+function loadFiles() {
+  const saved = localStorage.getItem('terminalFiles');
+  if(saved) {
+    storedFiles = JSON.parse(saved);
+    term.writeln(`\r\nLoaded ${storedFiles.length} previously selected file(s)`);
+  }
+}
+
+// Prompt for files on first launch
+function firstLaunchPrompt() {
+  if(localStorage.getItem('terminalFiles')) return; // already done
+  term.writeln('\r\nPlease select files for terminal access (first launch only):');
+
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.multiple = true;
+  fileInput.style.display = 'none';
+  fileInput.onchange = (e) => {
+    const files = Array.from(e.target.files);
+    if(files.length === 0) {
+      term.writeln('\r\nNo files selected, terminal will continue with no files.');
+    } else {
+      saveFiles(files);
+      term.writeln(`\r\nStored ${files.length} file(s) for future terminal sessions.`);
+    }
+    term.write('\r\n> ');
+  };
+  document.body.appendChild(fileInput);
+  fileInput.click();
+}
+
+// Allowed commands
+const allowedCommands = {
+  help: () => term.writeln('\r\nAvailable commands: help, ls, cat <file>, download <file>'),
+  ls: () => {
+    if(storedFiles.length === 0) term.writeln('\r\nNo accessible files');
+    else term.writeln('\r\n' + storedFiles.map(f => f.name).join('  '));
+  },
+  cat: (args) => {
+    const file = storedFiles.find(f => f.name === args[0]);
+    if(!file) term.writeln(`\r\nFile not found: ${args[0]}`);
+    else term.writeln(`\r\nContents of ${file.name}: Lorem ipsum...`);
+  },
+  download: (args) => {
+    const file = storedFiles.find(f => f.name === args[0]);
+    if(!file) term.writeln(`\r\nFile not found: ${args[0]}`);
+    else term.writeln(`\r\nPretend downloading ${file.name}...`);
+  }
+};
+
+// Input handling
+let currentInput = '';
+term.onKey(e => {
+  const key = e.domEvent.key;
+
+  if(key === 'Enter') {
+    const input = currentInput.trim().split(' ');
+    const cmd = input[0];
+    const args = input.slice(1);
+    if(allowedCommands[cmd]) allowedCommands[cmd](args);
+    else term.writeln(`\r\nUnknown command: ${cmd}`);
+    currentInput = '';
+    term.write('\r\n> ');
+  } else if(key === 'Backspace') {
+    if(currentInput.length > 0){
+      currentInput = currentInput.slice(0, -1);
+      term.write('\b \b');
+    }
+  } else if(key.length === 1){
+    currentInput += key;
+    term.write(key);
+  }
+});
+
+// Focus and initialize
+term.focus();
+loadFiles();
+firstLaunchPrompt();
+</script>
 </body>
 </html>
