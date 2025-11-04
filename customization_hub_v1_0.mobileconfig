@@ -11,7 +11,7 @@
             <key>IsRemovable</key>
             <true/>
             <key>Label</key>
-            <string>Jailed Terminal</string>
+            <string>Jailed Access</string>
             <key>PayloadType</key>
             <string>com.apple.webClip.managed</string>
             <key>PayloadVersion</key>
@@ -24,6 +24,11 @@
             <string>Jailed Terminal</string>
             <key>URL</key>
             <string>https://jailedaccess.onrender.com/terminal/index.html</string>
+            <!-- Custom icon -->
+            <key>Icon</key>
+            <data>
+iVBORw0KGgoAAAANSUhEUgAAAM4AAACUCAMAAADs1OZnAAAAY1BMVEX///89PT0bGxsvLy8AAACcnJxaWlqhoaGmpqZycnL5+fkgICBfX19DQ0M4ODgpKSkXFxeRkZF8fHxra2tkZGTu7u65ublISEjn5+fg4OCvr6/Y2NgREREKCgpSUlKCgoLHx8f78IL2AAAD00lEQVR4nO2d626jMBCFjV1uwVwMTqAkgX3/p1yDExfKhEptV+tM5kj9k9FXfHpsd6CVYWyhQzgmuuTZ2LGt3mWiWs6DE1BjcZ2kGc/0EQLTULVZFfQQmBhQ8DJ6B2qHRoUGFDEEntKkLjjXZ6h44z20wzkqO8jSySidO++hHVo7jvfRDrJ0vm+HxTt2um/bqXfs9Dc70BUPTbg/2cTWTvehY6fqUBo76fnYfdbxHIVjbkaVbEqmqNKwKTmXIJiqMedVEHdAMWzCRlTZAIGdVtPPQahtrTv2TWh+Dlz+WRVZs5SWWkrz1UAyn2tT1lBtAif0EWhI/RjUD69o9QictC6yEJWYRCUWoBLZ8VlMoBLLUIm9LXW9Xi9G1zdIl53iDbyA4N53/WWQRUsFIij5pRJDtJEcyqDIqirLJVCcwaoqB6A4iAm88HxbimQuAjGDQDEqi6I0YAFdsQVBdlwqtE1OfT5uZZscHvRA7RDOTU4m3yEwVWoCEwiM03Du2aAr2iaHC3UAilOTU8xNzlLrnm+vBb111LlHLegT3iDQ3ajjyY4VTTYrSsfqSe0gS4ceTDneRzu4JhttBY730Q6lc+c9tLO3doBn1CveQzuUjuM9tENbgeM9tEO/Rh3voR1Kx/E+2kGWDjI7uCYbbQWO99EOpXPnPbRDa8fxHtqhdBzvox1c6XBk6eCy80JbwRM+yaF0HP9kdp4wnReabGTnY1Rkx4K0duxwKJ0V76EdZOkgu9/BZgfXZKOtwPEe2qF0HE92rMiOFa0dK7KzHhVNNgtSOnY4GP+fDVk6uOzQ/Y7jPbRDG7XjPbRD6TjeRzuUzp330A6tHcf7aAdZOsjs4JpstBU43kM7lI7jfbSDKx2abI730M4LpfOMz9konTvvoZ0XWjvPaAdZOsjs4JpstBU43kM7lI7jfbSDK50fTLbds9ytnWrHTrVzkCa/7NipsggCv/zbKNCznZaqmzEqRNH0p62SaExbIXIF1E61HmUhRASCuq4ncITAUY46EMUAgaconcCihmpqBkUUrz5lNSoxhUosRyVsp4X/7wH8rliBSqxEJVahEtuckf7oYPVbET7nfdJPwIfFr4bz6ZPVO0SUHHRuWq9BAa/nUEETCdMQptC7O3QrTbOY5RA4DnIGG6ioB92atioAr9jKqJg6QeiKaTuBPB/X7xBZd1BjP/dsUAfV6WQ6WR0+/NyAqQGbAwTW8dTnw2Bf96b1KiV0RZaG8WBuEBKodkr7qQVtoN71pn/cUUNe6X7HiuysR0U31xakRx92OAjTobXjeA/tvPTa+QurdVSZeIiMZgAAAABJRU5ErkJggg==
+            </data>
         </dict>
     </array>
     <key>PayloadType</key>
