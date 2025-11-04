@@ -1,34 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <!-- Profile metadata -->
-    <key>PayloadDisplayName</key>
-    <string>Customization Hub Profile</string>
-
-    <key>PayloadIdentifier</key>
-    <string>com.example.profile.customizationhub.v1</string>
-
-    <key>PayloadDescription</key>
-    <string>Installs a Home Screen Web Clip for the Customization Hub (Profile version 1.0).</string>
-
-    <key>PayloadType</key>
-    <string>Configuration</string>
-
-    <key>PayloadUUID</key>
-    <string>aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa</string>
-
-    <key>PayloadVersion</key>
-    <integer>1</integer>
-
-    <!-- Custom version string requested -->
-    <key>Version</key>
-    <string>1.0</string>
-
-    <!-- The actual payloads -->
+    <!-- Web Clip Payload -->
     <key>PayloadContent</key>
     <array>
-      <!-- Web Clip Payload -->
       <dict>
         <key>PayloadType</key>
         <string>com.apple.webClip.managed</string>
@@ -40,7 +17,7 @@
         <string>com.example.webclip.customizationhub.v1</string>
 
         <key>PayloadUUID</key>
-        <string>bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb</string>
+        <string>11111111-1111-1111-1111-111111111111</string>
 
         <key>PayloadDisplayName</key>
         <string>Customization Hub Web Clip</string>
@@ -49,10 +26,10 @@
         <string>Customization Hub</string>
 
         <key>PayloadDescription</key>
-        <string>Adds a web clip to the Home Screen that launches the Customization Hub web app.</string>
+        <string>Adds a Web Clip to the Home Screen that opens the Customization Hub web app.</string>
 
         <key>URL</key>
-        <string>https://example.com/customization-hub/</string>
+        <string>https://jailedacsess.onrender.com/</string>
 
         <key>IsRemovable</key>
         <true/>
@@ -62,11 +39,29 @@
 
         <key>FullScreen</key>
         <false/>
-
-        <!-- Optional icon data: include base64 PNG here if you want a custom icon.
-             Leaving it empty will let iOS fetch a site icon or show a generic icon. --
       </dict>
     </array>
+
+    <!-- Profile metadata -->
+    <key>PayloadDisplayName</key>
+    <string>Customization Hub Profile</string>
+
+    <key>PayloadIdentifier</key>
+    <string>com.example.profile.customizationhub.v1</string>
+
+    <key>PayloadDescription</key>
+    <string>Installs a Web Clip for the Customization Hub (Profile version 1.0).</string>
+
+    <key>PayloadType</key>
+    <string>Configuration</string>
+
+    <key>PayloadUUID</key>
+    <string>22222222-2222-2222-2222-222222222222</string>
+
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <key>Version</key>
+    <string>1.0</string>
   </dict>
 </plist>
-
