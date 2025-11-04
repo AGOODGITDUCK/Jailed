@@ -3,60 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jailed Access Terminal</title>
-  <link rel="stylesheet" href="xterm.css" />
+  <title>Jailed Access</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+      color: #fff;
       display: flex;
       flex-direction: column;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #111;
-      color: #fff;
-    }
-    header {
-      padding: 1em;
-      background: #222;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      font-size: 1.5em;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
       color: #00b4ff;
     }
-    #terminal-container {
-      flex: 1;
+    p {
+      color: #ccc;
+      margin-bottom: 2em;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 28px;
+      background: #00b4ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #0094d1;
     }
   </style>
 </head>
 <body>
-  <header>Jailed Access Nerfed Terminal</header>
-  <div id="terminal-container"></div>
+  <h1>Jailed Access</h1>
+  <p>Welcome! Choose a tool below:</p>
 
-  <script src="xterm.js"></script>
-  <script>
-    const term = new Terminal({cursorBlink:true});
-    term.open(document.getElementById('terminal-container'));
-    term.write('Welcome to Nerfed Terminal\r\n> ');
+  <a class="button" href="/customization_hub_v1_0.mobileconfig">Download Profile</a>
+  <a class="button" href="/terminal/index.html">Terminal</a>
 
-    // Simple command parser for nerfed commands
-    const allowedCommands = {
-      help: () => term.writeln('\r\nAvailable commands: help, ls, cat <file>, download <file>'),
-      ls: () => term.writeln('\r\nfile1.txt  file2.txt  file3.txt'),
-      cat: (args) => term.writeln(`\r\nContents of ${args[0]}: Lorem ipsum...`),
-      download: (args) => term.writeln(`\r\nDownload ${args[0]} via your browser link.`)
-    };
-
-    term.onKey(e => {
-      const key = e.domEvent.key;
-      if(key === 'Enter') {
-        const buffer = term.buffer.active.getLine(term.buffer.active.baseY).translateToString(true).trim();
-        const input = buffer.split(' ');
-        const cmd = input[0];
-        const args = input.slice(1);
-        if(allowedCommands[cmd]) allowedCommands[cmd](args);
-        else term.writeln(`\r\nUnknown command: ${cmd}`);
-        term.write('\r\n> ');
-      }
-    });
-  </script>
 </body>
 </html>
