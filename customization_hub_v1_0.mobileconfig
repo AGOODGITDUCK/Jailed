@@ -5,7 +5,7 @@
 <dict>
     <key>PayloadContent</key>
     <array>
-        <!-- Web Clip payload -->
+        <!-- Web Clip Payload -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.webClip.managed</string>
@@ -31,28 +31,27 @@ iVBORw0KGgoAAAANSUhEUgAAAM4AAACUCAMAAADs1OZnAAAAY1BMVEX///89PT0bGxsvLy8AAACcnJxa
             </data>
         </dict>
 
-        <!-- VPN payload example -->
+        <!-- Demo VPN Payload -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.vpn.managed</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>PayloadIdentifier</key>
-            <string>com.jailed.vpnprofile</string>
+            <string>com.jailed.demo.vpn</string>
             <key>PayloadUUID</key>
-            <string>f2e1a3c4-7b9d-4e5f-a6b7-c8d9e0f1a2b3</string>
+            <string>df482186-52e8-42fb-95a9-c0ba20531319</string>
             <key>PayloadDisplayName</key>
-            <string>Jailed VPN</string>
+            <string>Jailed VPN Demo</string>
             <key>UserDefinedName</key>
-            <string>Tokyo VPN</string>
+            <string>Demo VPN</string>
             <key>VPNType</key>
             <string>IPSec</string>
             <key>RemoteAddress</key>
-            <string>219.100.37.30</string>
+            <string>8.8.8.8</string>
             <key>AuthenticationMethod</key>
             <string>None</string>
         </dict>
-
     </array>
 
     <key>PayloadType</key>
@@ -62,7 +61,7 @@ iVBORw0KGgoAAAANSUhEUgAAAM4AAACUCAMAAADs1OZnAAAAY1BMVEX///89PT0bGxsvLy8AAACcnJxa
     <key>PayloadIdentifier</key>
     <string>com.jailed.access.profile</string>
     <key>PayloadUUID</key>
-    <string>9b8a7c6d-5e4f-4321-9876-abcdef123456</string>
+    <string>e1d2f3a4-5678-90ab-cdef-1234567890ab</string>
     <key>PayloadDisplayName</key>
     <string>Jailed Access Profile</string>
 </dict>
